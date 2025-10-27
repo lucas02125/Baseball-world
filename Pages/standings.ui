@@ -1,0 +1,622 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Standings</class>
+ <widget class="QWidget" name="Standings">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1185</width>
+    <height>1028</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <widget class="QWidget" name="verticalLayoutWidget">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>20</y>
+     <width>1151</width>
+     <height>80</height>
+    </rect>
+   </property>
+   <layout class="QVBoxLayout" name="verticalLayout">
+    <item>
+     <widget class="QLabel" name="label">
+      <property name="font">
+       <font>
+        <pointsize>16</pointsize>
+       </font>
+      </property>
+      <property name="text">
+       <string>Standings</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QWidget" name="horizontalLayoutWidget">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>110</y>
+     <width>1151</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <layout class="QHBoxLayout" name="horizontalLayout">
+    <item>
+     <widget class="QPushButton" name="btnStandings">
+      <property name="text">
+       <string>Standings</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QPushButton" name="btnScores">
+      <property name="text">
+       <string>Scores</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QPushButton" name="btnSchedule">
+      <property name="text">
+       <string>Schedule</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QPushButton" name="btnStats">
+      <property name="text">
+       <string>Stats</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QPushButton" name="btnTeams">
+      <property name="text">
+       <string>Teams</string>
+      </property>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QComboBox" name="cmbBx_StandingFilter">
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>160</y>
+     <width>211</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="currentText">
+    <string>&lt; Choose a Filter &gt;</string>
+   </property>
+   <item>
+    <property name="text">
+     <string>&lt; Choose a Filter &gt;</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>Season</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>Date</string>
+    </property>
+   </item>
+  </widget>
+  <widget class="QComboBox" name="cmBx_yearFilter">
+   <property name="geometry">
+    <rect>
+     <x>930</x>
+     <y>160</y>
+     <width>231</width>
+     <height>22</height>
+    </rect>
+   </property>
+   <property name="maxVisibleItems">
+    <number>50</number>
+   </property>
+  </widget>
+  <widget class="QCalendarWidget" name="cWdg_pickDate">
+   <property name="geometry">
+    <rect>
+     <x>410</x>
+     <y>150</y>
+     <width>376</width>
+     <height>218</height>
+    </rect>
+   </property>
+   <property name="minimumDate">
+    <date>
+     <year>1969</year>
+     <month>4</month>
+     <day>1</day>
+    </date>
+   </property>
+   <property name="maximumDate">
+    <date>
+     <year>2025</year>
+     <month>9</month>
+     <day>30</day>
+    </date>
+   </property>
+   <property name="verticalHeaderFormat">
+    <enum>QCalendarWidget::NoVerticalHeader</enum>
+   </property>
+   <property name="navigationBarVisible">
+    <bool>true</bool>
+   </property>
+   <property name="dateEditEnabled">
+    <bool>false</bool>
+   </property>
+  </widget>
+  <widget class="QWidget" name="horizontalLayoutWidget_5">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>710</y>
+     <width>1151</width>
+     <height>51</height>
+    </rect>
+   </property>
+   <layout class="QHBoxLayout" name="horizontalLayout_6">
+    <item>
+     <widget class="QLabel" name="lbl_NLEast">
+      <property name="font">
+       <font>
+        <pointsize>14</pointsize>
+       </font>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QLabel" name="lbl_NLCentral">
+      <property name="font">
+       <font>
+        <pointsize>14</pointsize>
+       </font>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QLabel" name="lbl_NLWest">
+      <property name="font">
+       <font>
+        <pointsize>14</pointsize>
+       </font>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QWidget" name="horizontalLayoutWidget_3">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>770</y>
+     <width>1151</width>
+     <height>231</height>
+    </rect>
+   </property>
+   <layout class="QHBoxLayout" name="horizontalLayout_3">
+    <property name="spacing">
+     <number>5</number>
+    </property>
+    <item>
+     <widget class="QTableWidget" name="tblWid_NLEast">
+      <property name="columnCount">
+       <number>8</number>
+      </property>
+      <column>
+       <property name="text">
+        <string>Team</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>W</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>L</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>GB</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>(E#)</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>WC Rank</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>WC GB</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>(E#)</string>
+       </property>
+      </column>
+     </widget>
+    </item>
+    <item>
+     <widget class="QTableWidget" name="tblWid_NLCentral">
+      <property name="columnCount">
+       <number>8</number>
+      </property>
+      <column>
+       <property name="text">
+        <string>Team</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>W</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>L</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>GB</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>(E#)</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>WC Rank</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>WC GB</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>(E#)</string>
+       </property>
+      </column>
+     </widget>
+    </item>
+    <item>
+     <widget class="QTableWidget" name="tblWid_NLWest">
+      <property name="columnCount">
+       <number>8</number>
+      </property>
+      <column>
+       <property name="text">
+        <string>Team</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>W</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>L</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>GB</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>(E#)</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>WC Rank</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>WC GB</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>(E#)</string>
+       </property>
+      </column>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QWidget" name="horizontalLayoutWidget_4">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>380</y>
+     <width>1151</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <layout class="QHBoxLayout" name="horizontalLayout_5">
+    <item>
+     <widget class="QLabel" name="lbl_ALEast">
+      <property name="font">
+       <font>
+        <pointsize>14</pointsize>
+       </font>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QLabel" name="lbl_ALCentral">
+      <property name="font">
+       <font>
+        <pointsize>14</pointsize>
+       </font>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QLabel" name="lbl_ALWest">
+      <property name="font">
+       <font>
+        <pointsize>14</pointsize>
+       </font>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QWidget" name="horizontalLayoutWidget_2">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>440</y>
+     <width>1151</width>
+     <height>231</height>
+    </rect>
+   </property>
+   <layout class="QHBoxLayout" name="horizontalLayout_2">
+    <property name="spacing">
+     <number>5</number>
+    </property>
+    <item>
+     <widget class="QTableWidget" name="tblWid_ALEast">
+      <property name="columnCount">
+       <number>8</number>
+      </property>
+      <column>
+       <property name="text">
+        <string>Team</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>W</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>L</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>GB</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>(E#)</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>WC Rank</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>WC GB</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>(E#)</string>
+       </property>
+      </column>
+     </widget>
+    </item>
+    <item>
+     <widget class="QTableWidget" name="tblWid_ALCentral">
+      <property name="columnCount">
+       <number>8</number>
+      </property>
+      <column>
+       <property name="text">
+        <string>Team</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>W</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>L</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>GB</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>(E#)</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>WC Rank</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>WC GB</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>(E#)</string>
+       </property>
+      </column>
+     </widget>
+    </item>
+    <item>
+     <widget class="QTableWidget" name="tblWid_ALWest">
+      <property name="columnCount">
+       <number>8</number>
+      </property>
+      <column>
+       <property name="text">
+        <string>Team</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>W</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>L</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>GB</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>(E#)</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>WC Rank</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>WC GB</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>(E#)</string>
+       </property>
+      </column>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QCheckBox" name="ckBx_WildCard">
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>190</y>
+     <width>101</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Wild Card</string>
+   </property>
+   <property name="checked">
+    <bool>true</bool>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="btn_goBack">
+   <property name="geometry">
+    <rect>
+     <x>510</x>
+     <y>1030</y>
+     <width>181</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Back</string>
+   </property>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
