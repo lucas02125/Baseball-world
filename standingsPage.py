@@ -6,8 +6,6 @@ from datetime import datetime
 import teams as teamAPI
 import ctypes
 
-import statsapi
-
 
 class StandingsPage(QWidget):
     def __init__(self, parent=None):
@@ -18,7 +16,8 @@ class StandingsPage(QWidget):
         self.ui.cWdg_pickDate.setVisible(False)
         self.ui.cmBx_yearFilter.setVisible(False) 
         #combo_roll.addItems([str(e) for e in range(1, 100)])
-        divYears = [str(e) for e in range(1969,datetime.now().year)]
+        recentSeason = teamAPI.getLatestSeason(self)
+        divYears = [str(e) for e in range(1969,int(recentSeason['seasonId']))]
         self.ui.cmBx_yearFilter.addItems(divYears)
         self.ui.ckBx_WildCard.stateChanged.connect(lambda:self.adjust_standingCols())
         self.ui.cWdg_pickDate.clicked.connect(lambda:self.getStandings_ByDate(self.ui.cWdg_pickDate.selectedDate()))

@@ -70,7 +70,8 @@ def load_ALCentral(self,leagueData,AL_CENTRAL=202):
 
 def load_ALWest(self,leagueData,AL_WEST=200):
     AlWestTeams = leagueData[AL_WEST]['teams']
-    if isinstance(self,QMainWindow):        
+    if isinstance(self,QMainWindow):      
+        self.lbl_ALWest.setText(leagueData[AL_WEST]['div_name'])
         self.tblWid_ALWest.setRowCount(len(AlWestTeams))
         for tIndex, team in enumerate(AlWestTeams): 
             colIndex = 0           
@@ -184,12 +185,9 @@ def load_NLWest(self,leagueData,NL_WEST=203):
                 colIndex += 1
         self.ui.tblWid_NLWest.resizeColumnsToContents()      
 
+def getLatestSeason(self):
+    return statsapi.latest_season()
 
 def get_LeagueData(League="103,104", Division="All",InclWC=False,Season=None,Date=None):
     
     return statsapi.standings_data(leagueId=League,division=Division,include_wildcard=InclWC,season=Season,date=Date)
-# def get_ALCentral():
-# def get_ALWest():
-# def get_NLEast():
-# def get_NLCentral():
-# def get_NLWest():

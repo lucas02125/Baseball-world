@@ -104,7 +104,7 @@ class Ui_MainWindow(object):
         self.tblWid_NLWest.setRowCount(0)
         self.horizontalLayout_3.addWidget(self.tblWid_NLWest)
         self.horizontalLayoutWidget_4 = QtWidgets.QWidget(self.centralwidget)
-        self.horizontalLayoutWidget_4.setGeometry(QtCore.QRect(20, 180, 1151, 41))
+        self.horizontalLayoutWidget_4.setGeometry(QtCore.QRect(20, 180, 1151, 51))
         self.horizontalLayoutWidget_4.setObjectName("horizontalLayoutWidget_4")
         self.horizontalLayout_5 = QtWidgets.QHBoxLayout(self.horizontalLayoutWidget_4)
         self.horizontalLayout_5.setContentsMargins(0, 0, 0, 0)
