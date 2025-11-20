@@ -185,9 +185,12 @@ def load_NLWest(self,leagueData,NL_WEST=203):
                 colIndex += 1
         self.ui.tblWid_NLWest.resizeColumnsToContents()      
 
-def getLatestSeason(self):
+def get_LatestSeason(self):
     return statsapi.latest_season()
 
-def get_LeagueData(League="103,104", Division="All",InclWC=False,Season=None,Date=None):
+def get_LeagueData(self,League="103,104", Division="All",InclWC=False,Season=None,Date=None):
     
     return statsapi.standings_data(leagueId=League,division=Division,include_wildcard=InclWC,season=Season,date=Date)
+
+def get_RosterData(self, teamId, seasonYear):
+    return statsapi.roster(teamId=teamId, season=seasonYear)

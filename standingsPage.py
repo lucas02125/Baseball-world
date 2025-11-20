@@ -4,6 +4,7 @@ from PyQt5.QtWidgets import *
 from Pages.standings import Ui_Standings
 from datetime import datetime
 import teams as teamAPI
+#Error handling
 import ctypes
 
 
@@ -16,7 +17,7 @@ class StandingsPage(QWidget):
         self.ui.cWdg_pickDate.setVisible(False)
         self.ui.cmBx_yearFilter.setVisible(False) 
         #combo_roll.addItems([str(e) for e in range(1, 100)])
-        recentSeason = teamAPI.getLatestSeason(self)
+        recentSeason = teamAPI.get_LatestSeason(self)
         divYears = [str(e) for e in range(1969,int(recentSeason['seasonId']))]
         self.ui.cmBx_yearFilter.addItems(divYears)
         self.ui.ckBx_WildCard.stateChanged.connect(lambda:self.adjust_standingCols())
@@ -25,7 +26,6 @@ class StandingsPage(QWidget):
         self.ui.cmBx_yearFilter.currentTextChanged.connect(lambda: self.getStandings_ByYear(self.ui.cmBx_yearFilter.currentText()))
 
     def getStandings_ByDate(self,chosenDate):
-        print(chosenDate)
         theChosenDate = chosenDate.toString('MM/dd/yyyy')
         isWC = self.ui.ckBx_WildCard.isChecked()
         leagueData = teamAPI.get_LeagueData(Date=theChosenDate, InclWC=isWC)

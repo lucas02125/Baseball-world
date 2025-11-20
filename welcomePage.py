@@ -26,7 +26,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         super(MainWindow,self).__init__(parent)
         self.setupUi(self)
 
-        leagueData = teammer.get_LeagueData()
+        leagueData = teammer.get_LeagueData(self)
 
         self.btnStandings.clicked.connect(lambda:self.access_Standings())
         self.btnTeams.clicked.connect(lambda:self.access_Teams(leagueData))
