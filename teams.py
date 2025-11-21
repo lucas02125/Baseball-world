@@ -194,3 +194,17 @@ def get_LeagueData(self,League="103,104", Division="All",InclWC=False,Season=Non
 
 def get_RosterData(self, teamId, seasonYear):
     return statsapi.roster(teamId=teamId, season=seasonYear)
+
+def get_PlayerStatistics_Career(self, playerName, playerPosition, chosenSeasonYear):
+    if playerPosition == "P":
+        playerPosition = "pitching"
+    else:
+        playerPosition = "hitting"
+    return statsapi.player_stats(next(x['id'] for x in statsapi.get('sports_players',{'season':chosenSeasonYear,'gameType':'W'})['people'] if x['fullName']==playerName), playerPosition, 'career')
+
+def get_PlayerStatistics_YBY(self, playerName, playerPosition, chosenSeasonYear):
+    if playerPosition == "P":
+        playerPosition = "pitching"
+    else:
+        playerPosition = "hitting"
+    return statsapi.player_stat_data(next(x['id'] for x in statsapi.get('sports_players',{'season':chosenSeasonYear,'gameType':'W'})['people'] if x['fullName']==playerName), playerPosition, 'yearByYear')
