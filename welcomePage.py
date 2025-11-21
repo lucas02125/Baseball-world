@@ -3,6 +3,7 @@ from PyQt5.QtGui import *
 from PyQt5.QtWidgets import *
 from Pages.homepage import Ui_MainWindow
 from standingsPage import StandingsPage
+from rosterPage import RosterPage
 import teams as teammer
 
 
@@ -25,10 +26,11 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         super(MainWindow,self).__init__(parent)
         self.setupUi(self)
 
+        leagueData = teammer.get_LeagueData(self)
+
         self.btnStandings.clicked.connect(lambda:self.access_Standings())
-
-        leagueData = teammer.get_LeagueData()
-
+        self.btnTeams.clicked.connect(lambda:self.access_Teams(leagueData))
+        
         teammer.load_ALEast(self,leagueData,AL_EAST)
         teammer.load_ALCentral(self,leagueData,AL_CENTRAL)
         teammer.load_ALWest(self,leagueData,AL_WEST)
@@ -39,6 +41,11 @@ class MainWindow(QMainWindow, Ui_MainWindow):
     def access_Standings(self):
         self.standingsPage = StandingsPage()
         self.standingsPage.show()
+
+    def access_Teams(self, leagueData):
+        self.rosterPage = RosterPage(leagueData)
+        self.rosterPage.show()
+        
                 
 app = QApplication([])
 window = MainWindow()
