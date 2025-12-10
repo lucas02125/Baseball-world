@@ -28,7 +28,7 @@ class StandingsPage(QWidget):
     def getStandings_ByDate(self,chosenDate):
         theChosenDate = chosenDate.toString('MM/dd/yyyy')
         isWC = self.ui.ckBx_WildCard.isChecked()
-        leagueData = teamAPI.get_LeagueData(Date=theChosenDate, InclWC=isWC)
+        leagueData = teamAPI.get_LeagueData(self, Date=theChosenDate, InclWC=isWC)
         if not leagueData:
             ctypes.windll.user32.MessageBoxW(0, "No data for chosen date", "Please try again", 1)
             return
@@ -52,7 +52,7 @@ class StandingsPage(QWidget):
 
     def getStandings_ByYear(self, chosenYear):
         isWC = self.ui.ckBx_WildCard.isChecked()
-        leagueData = teamAPI.get_LeagueData( Season=int(chosenYear))
+        leagueData = teamAPI.get_LeagueData(self, Season=int(chosenYear))
         teamAPI.load_ALEast(self,leagueData=leagueData)
         teamAPI.load_ALWest(self,leagueData=leagueData)
         teamAPI.load_NLEast(self,leagueData=leagueData)
